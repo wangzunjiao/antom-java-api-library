@@ -1,0 +1,21 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '8', '11', '17', '20' ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK ${{ matrix.Java }}
+        uses: actions/setup-java@v4
+
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'adopt'
+          
+      - name: Run the tests with Maven
+        run: mvn -B clean test package --no-transfer-progress
