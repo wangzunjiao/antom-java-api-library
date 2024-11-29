@@ -1,0 +1,57 @@
+package {{modelPackage}};
+
+/**
+ * {{description}}{{^description}}{{classname}}{{/description}}{{#isDeprecated}}
+ * @deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}
+ * {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}{{/isDeprecated}}
+ */{{#isDeprecated}}
+
+@Deprecated{{/isDeprecated}}{{#description}}
+@ApiModel(description = "{{{.}}}"){{/description}}
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+{{>additionalModelTypeAnnotations}}{{#discriminator}}{{>typeInfoAnnotation}}{{/discriminator}}{{>xmlAnnotation}}
+{{#vendorExtensions.x-class-extra-annotation}}
+{{{vendorExtensions.x-class-extra-annotation}}}
+{{/vendorExtensions.x-class-extra-annotation}}
+public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}}{{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
+{{#serializableModel}}
+  private static final long serialVersionUID = 1L;
+{{/serializableModel}}
+
+{{#vars}}
+    {{#isEnum}}
+        {{^isContainer}}
+            {{^vendorExtensions.x-enum-as-string}}
+                {{>modelInnerEnum}}
+            {{/vendorExtensions.x-enum-as-string}}
+        {{/isContainer}}
+        {{#isContainer}}
+            {{#mostInnerItems}}
+                {{>modelInnerEnum}}
+            {{/mostInnerItems}}
+        {{/isContainer}}
+    {{/isEnum}}
+
+
+    {{^vendorExtensions.x-is-jackson-optional-nullable}}
+        {{#isContainer}}
+            {{#deprecated}}
+                @Deprecated // deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
+            {{/deprecated}}
+            private {{{datatypeWithEnum}}} {{name}}{{#required}}{{#defaultValue}} = {{{.}}}{{/defaultValue}}{{/required}}{{^required}} = null{{/required}};
+        {{/isContainer}}
+        {{^isContainer}}
+            {{#deprecated}}
+                @Deprecated // deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
+            {{/deprecated}}
+            private {{{datatypeWithEnum}}} {{name}};
+        {{/isContainer}}
+    {{/vendorExtensions.x-is-jackson-optional-nullable}}
+
+{{/vars}}
+
+
+}
