@@ -53,11 +53,30 @@ import lombok.NoArgsConstructor;
 {{#models}}
     {{#model}}
         {{#oneOf}}
-            {{#-first}}
+            {{#first}}
                 import com.fasterxml.jackson.core.type.TypeReference;
-            {{/-first}}
+            {{/first}}
         {{/oneOf}}
 
-        {{#isEnum}}{{>modelEnum}}{{/isEnum}}{{^isEnum}}{{#oneOf}}{{#-first}}{{>oneof_model}}{{/-first}}{{/oneOf}}{{^oneOf}}{{#anyOf}}{{#-first}}{{>anyof_model}}{{/-first}}{{/anyOf}}{{^anyOf}}{{>pojo}}{{/anyOf}}{{/oneOf}}{{/isEnum}}
+        {{#isEnum}}
+            {{>modelEnum}}
+        {{/isEnum}}
+
+        {{^isEnum}}
+            {{#oneOf}}
+            {{! 将oneOf的逻辑内容放置此处 }}
+            {{/oneOf}}
+
+            {{^oneOf}}
+                {{#anyOf}}
+                {{! 将anyOf的逻辑内容放置此处 }}
+                {{/anyOf}}
+
+                {{^anyOf}}
+                    {{>pojo}}
+                {{/anyOf}}
+            {{/oneOf}}
+        {{/isEnum}}
     {{/model}}
 {{/models}}
+
