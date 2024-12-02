@@ -1,21 +1,16 @@
 {{>licenseInfo}}
 package {{package}};
 
-import com.adyen.Client;
-import com.adyen.Service;
-import com.adyen.constants.ApiConstants;
+import com.antom.request.AlipayRequest;
+import com.antom.response.AlipayResponse;
 {{#imports}}import {{import}};
 {{/imports}}
-import com.adyen.model.RequestOptions;
-import com.adyen.service.exception.ApiException;
-import com.adyen.service.resource.Resource;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 {{#operations}}
-public class {{classname}} extends Service {
+public class {{classname}} extends AlipayRequest<AlipayResponse> {
 
     public static final String API_VERSION = "{{{version}}}";
 

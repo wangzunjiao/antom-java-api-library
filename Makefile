@@ -5,7 +5,7 @@ openapi-generator-cli:=java -jar $(openapi-generator-jar) # 运行生成器的�
 
 generator:=java
 library:=jersey3 # 定义 Java 生成器和库（这里使用 jersey3）。
-modelGen:=acswebhooks balancecontrol balanceplatform binlookup checkout dataprotection legalentitymanagement management payment payout posterminalmanagement recurring transfers storedvalue configurationwebhooks reportwebhooks transferwebhooks managementwebhooks disputes transactionwebhooks # 需要生成模型的服务列表。
+modelGen:=consult # 需要生成模型的服务列表。
 models:=src/main/java/com/antom/model #生成模型的存放路径。
 output:=target/out #生成输出的临时目录。
 
@@ -41,8 +41,8 @@ $(modelGen): target/spec $(openapi-generator-jar)
 	mv $(output)/$(models)/JSON.java $(models)/$@
 
 # Full service + models automation
-bigServices:=balanceplatform checkout payout management legalentitymanagement transfers
-singleFileServices:=balancecontrol binlookup dataprotection storedvalue posterminalmanagement recurring payment disputes
+bigServices:=consult
+singleFileServices:=consult
 
 services: $(bigServices) $(singleFileServices)
 
