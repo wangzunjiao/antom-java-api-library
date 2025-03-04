@@ -12,7 +12,6 @@
 
 package com.antom.model;
 
-import com.antom.request.ApiException;
 import java.util.Objects;
 import java.lang.reflect.Type;
 import java.util.Map;
