@@ -40,14 +40,14 @@ public class {{classname}} {
 {{#isDeprecated}}
     @Deprecated
 {{/isDeprecated}}
-    public {{#returnType}}{{{.}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{#vendorExtensions.x-methodName}}{{.}}{{/vendorExtensions.x-methodName}}{{^vendorExtensions.x-methodName}}{{operationId}}{{/vendorExtensions.x-methodName}} throws ApiException, IOException {
+    public {{#returnType}}{{{.}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{#vendorExtensions.x-methodName}}{{.}}{{/vendorExtensions.x-methodName}}{{^vendorExtensions.x-methodName}}{{operationId}}{{/vendorExtensions.x-methodName}} throws IOException {
         {{#returnType}}return {{/returnType}}{{#vendorExtensions.x-methodName}}{{.}}{{/vendorExtensions.x-methodName}}{{^vendorExtensions.x-methodName}}{{operationId}}{{/vendorExtensions.x-methodName}});
     }
 
 {{#isDeprecated}}
    @Deprecated
 {{/isDeprecated}}
-    public {{#returnType}}{{{.}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{#vendorExtensions.x-methodName}}{{.}}{{/vendorExtensions.x-methodName}}{{^vendorExtensions.x-methodName}}{{operationId}}{{/vendorExtensions.x-methodName}} throws ApiException, IOException {
+    public {{#returnType}}{{{.}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{#vendorExtensions.x-methodName}}{{.}}{{/vendorExtensions.x-methodName}}{{^vendorExtensions.x-methodName}}{{operationId}}{{/vendorExtensions.x-methodName}} throws IOException {
 {{! verify if a required parameter is set }}
         {{#hasPathParams}}
         //Add path params
