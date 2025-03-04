@@ -3,8 +3,8 @@ package com.antom.request;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import com.antom.response.AlipayResponse;
-import jakarta.ws.rs.HttpMethod;
 import lombok.Data;
+import javax.ws.rs.HttpMethod;
 
 @Data
 public abstract class AlipayRequest<T extends AlipayResponse> {
