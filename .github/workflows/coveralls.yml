@@ -14,8 +14,6 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-      - name: Build & Test
-        run: mvn clean test -Dcheckstyle.skip=true
       - name: Build with Maven
         run: mvn test jacoco:report -Dcheckstyle.skip=true
       - name: Coveralls Coverage Report Submission
