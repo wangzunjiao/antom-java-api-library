@@ -1,4 +1,4 @@
 package com.antom.request;
 
-public class ApiException {
+public class ApiException extends Throwable {
 }
