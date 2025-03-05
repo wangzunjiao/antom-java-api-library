@@ -1,4 +1,8 @@
-
+const data = {
+classname: {{classname}},
+// 添加判断结果字段
+isRequestClass: classname.endsWith("Request")
+};
 
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}{{#isDeprecated}}
@@ -55,11 +59,11 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-    {{#classNameEndsWithRequest}}
-        public {{classname}}() {
-        this.setPath("{{apiBasePath}}{{operationPath}}");
-        }
-    {{/classNameEndsWithRequest}}
 
+{{#isRequestClass}}
+    public {{classname}}() {
+    this.setPath("{{apiBasePath}}{{operationPath}}");
+    }
+{{/isRequestClass}}
 
 }
