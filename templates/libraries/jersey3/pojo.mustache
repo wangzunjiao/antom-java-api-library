@@ -1,4 +1,3 @@
-
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}{{#isDeprecated}}
  * @deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}
@@ -48,18 +47,17 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
                 eprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
             {{/deprecated}}
             private {{{datatypeWithEnum}}} {{name}};
+
         {{/isContainer}}
     {{/vendorExtensions.x-is-jackson-optional-nullable}}
 
 {{/vars}}
 
-
-
-
-{{#isRequestClass}}
+{{#classname}}
+{{#matches}}^.*Request${{/matches}}
     public {{classname}}() {
-    this.setPath("{{servers.url}}");
+        this.setPath("{{servers.url}}");
     }
-{{/isRequestClass}}
-
+{{/matches}}
+{{/classname}}
 }
