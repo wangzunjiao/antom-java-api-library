@@ -1,7 +1,8 @@
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}
  * DEBUG: classname={{classname}}
- * DEBUG: last4Chars={{#lambda.substring}}{{classname}}-7{{/lambda.substring}}
+ * DEBUG: parentSchema={{parentSchema}}
+ * DEBUG: baseType={{baseType}}
  */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -60,12 +61,10 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 {{#classname}}
-{{#lambda.matches}}^.*Request${{classname}}
-    // Constructor for Request class
+    {{#lambda.test}}^.*Request${{classname}}{{/lambda.test}}
     public {{classname}}() {
         this.setPath("{{servers.url}}");
     }
-{{/lambda.matches}}
 {{/classname}}
 
 }
