@@ -14,8 +14,7 @@
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
 {{/vendorExtensions.x-class-extra-annotation}}
-// DEBUG: classname={{classname}}
-// DEBUG: matches test={{#matches}}^.*Request${{/matches}}
+// DEBUG: classname={{classname}}, isRequestClass={{lambda.isRequest}}
 public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
 {{#serializableModel}}
   private static final long serialVersionUID = 1L;
@@ -56,10 +55,12 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 {{/vars}}
 
 
-{{#isRequestClass}}
+
+
+{{#lambda.isRequest}}
     public {{classname}}() {
         this.setPath("{{servers.url}}");
     }
-${{/isRequestClass}}
+{{/lambda.isRequest}}
 
 }
