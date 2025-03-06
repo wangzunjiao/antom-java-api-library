@@ -1,11 +1,13 @@
 /**
- * {{description}}{{^description}}{{classname}}{{/description}}{{#isDeprecated}}
- * @deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}
- * {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}{{/isDeprecated}}
- */{{#isDeprecated}}
-
-@Deprecated{{/isDeprecated}}{{#description}}
-@ApiModel(description = "{{{.}}}"){{/description}}
+ * {{description}}{{^description}}{{classname}}{{/description}}
+ * DEBUG: classname={{classname}}
+ * DEBUG: last4Chars={{#lambda.substring}}{{classname}}-7{{/lambda.substring}}
+ */
+{{#isDeprecated}}
+@Deprecated{{/isDeprecated}}
+{{#description}}
+@ApiModel(description = "{{{.}}}")
+{{/description}}
 @Data
 @Builder
 @NoArgsConstructor
@@ -58,10 +60,12 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 {{#classname}}
-{{#lambda.endsWith}}Request{{/lambda.endsWith}}
+{{#lambda.matches}}^.*Request${{classname}}
+    // Constructor for Request class
     public {{classname}}() {
         this.setPath("{{servers.url}}");
     }
+{{/lambda.matches}}
 {{/classname}}
 
 }
