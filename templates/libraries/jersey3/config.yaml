@@ -4,3 +4,7 @@ files:
 #    folder: api
 #    templateType: API
 #    destinationFilename: Single.java
+additionalProperties:
+  isRequestClass: 
+    type: boolean
+    value: "classname.matches('^.*Request$')"
