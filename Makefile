@@ -36,7 +36,6 @@ $(modelGen): target/spec $(openapi-generator-jar)
 		--inline-schema-name-mappings DonationPaymentRequest_paymentMethod=DonationPaymentMethod \
 		--additional-properties=dateLibrary=java8 \
 		--additional-properties=openApiNullable=false \
-		--additional-properties=lambdas=isRequest=classname.endsWith('Request') \
 		--additional-properties=resourceClass=$(resourceClass)Resource
 	mv $(output)/$(models)/$@ $(models)/$@
 	mv $(output)/$(models)/JSON.java $(models)/$@
