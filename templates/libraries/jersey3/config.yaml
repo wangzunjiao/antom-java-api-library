@@ -5,6 +5,4 @@ files:
 #    templateType: API
 #    destinationFilename: Single.java
 additionalProperties:
-  isRequestClass: 
-    type: boolean
-    value: "classname.matches('^.*Request$')"
+  isRequestClass: true  # 先用固定值测试
