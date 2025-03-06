@@ -54,9 +54,10 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 {{/vars}}
 
 {{#classname}}
-{{#matches}}^.*Request${{/matches}}
+{{#matches}}^.*Request
     public {{classname}}() {
         this.setPath("{{servers.url}}");
     }
+${{/matches}}
 {{/classname}}
 }
