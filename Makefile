@@ -119,7 +119,7 @@ $(openapi-generator-jar):
 
 # Discard generated artifacts and changed models
 clean:
-	rm -rf $(output)
+	#rm -rf $(output)
 	git checkout $(models)
 	git clean -f -d $(models)
 

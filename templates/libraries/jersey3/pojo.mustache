@@ -44,7 +44,8 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
         {{/isContainer}}
         {{^isContainer}}
             {{#deprecated}}
-                @Deprecated // deprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
+                @Deprecated // d
+                eprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
             {{/deprecated}}
             private {{{datatypeWithEnum}}} {{name}};
         {{/isContainer}}
