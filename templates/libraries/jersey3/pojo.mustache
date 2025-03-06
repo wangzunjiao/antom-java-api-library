@@ -1,8 +1,8 @@
 const data = {
-classname: {{classname}},
-// 添加判断结果字段
-isRequestClass: classname.endsWith("Request")
+classname: "{{{classname}}}", // 安全转义
+isRequestClass: "{{{classname}}}".endsWith("Request")
 };
+
 
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}{{#isDeprecated}}
