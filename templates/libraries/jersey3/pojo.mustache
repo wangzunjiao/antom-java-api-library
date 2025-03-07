@@ -58,9 +58,17 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 {{/vars}}
 
 
-{{#lambda.matchesRegex}}classname^.*Request${{/lambda.matchesRegex}}
+{{! 只为Request类添加无参构造方法 }}
+{{#lambda.test}}^.*Request${{classname}}
 public {{classname}}() {
-this.setPath("{{servers.url}}");
+{{#servers}}
+    this.setPath("{{url}}");
+{{/servers}}
+{{^servers}}
+    this.setPath("/ams/api/v1/payments/consult");
+{{/servers}}
 }
+{{/lambda.test}}
+
 
 }
