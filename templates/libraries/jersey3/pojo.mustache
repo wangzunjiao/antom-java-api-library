@@ -57,13 +57,12 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 {{/vars}}
 
-{{#endsWith}}{{classname}}|Request
-
-
-public {{classname}}() {
-
-}
+{{#endsWith classname "Request"}}
+    public {{classname}}() {
+    // 自动生成的构造函数
+    }
 {{/endsWith}}
+
 
 
 }
