@@ -17,7 +17,7 @@
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
 {{/vendorExtensions.x-class-extra-annotation}}
-// DEBUG: classname={{classname}}, isRequestClass={{#lambda.endsWith}}Request{{/lambda.endsWith}}
+// DEBUG: classname={{classname}}, isRequestClass={{isRequestClass}}
 public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
 {{#serializableModel}}
   private static final long serialVersionUID = 1L;
@@ -58,13 +58,11 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 {{/vars}}
 
 
+ {{#isRequestClass}}
+     //无参构造函数
+     public {{classname}}() {
+     }
+ {{/isRequestClass}}
 
-
-{{#classname}}
-    {{#lambda.test}}^.*Request${{classname}}{{/lambda.test}}
-    public {{classname}}() {
-        this.setPath("{{servers.url}}");
-    }
-{{/classname}}
 
 }
