@@ -57,10 +57,11 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 {{/vars}}
 
-{{^endsWith}}{{classname}},Request
-public class {{classname}} {
-}
-{{/endsWith}}
+{{! template.mustache }}
+{{#CustomHelpers.endsWith classname "Request"}}
+    public class {{classname}} {
+    }
+{{/CustomHelpers.endsWith}}
 
 
 
