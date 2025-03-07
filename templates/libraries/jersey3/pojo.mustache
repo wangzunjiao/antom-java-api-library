@@ -58,11 +58,9 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 {{/vars}}
 
 
- {{#isRequestClass}}
-     //无参构造函数
-     public {{classname}}() {
-     }
- {{/isRequestClass}}
-
+{{#lambda.matchesRegex}}classname^.*Request${{/lambda.matchesRegex}}
+public {{classname}}() {
+this.setPath("{{servers.url}}");
+}
 
 }
