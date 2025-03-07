@@ -17,7 +17,6 @@
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
 {{/vendorExtensions.x-class-extra-annotation}}
-// DEBUG: classname={{classname}}, isRequestClass={{#endsWith classname "Request"}}{{/endsWith}}
 public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
 {{#serializableModel}}
   private static final long serialVersionUID = 1L;
@@ -57,10 +56,11 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 {{/vars}}
 
-{{! template.mustache }}
-{{#CustomHelpers.endsWith classname "Request"}}
-    public class {{classname}} {
-    }
+
+
+{{#CustomHelpers.endsWith classname "Request" context}}
+    // 添加 Request 类特有字段或方法
+    private String requestId;
 {{/CustomHelpers.endsWith}}
 
 
