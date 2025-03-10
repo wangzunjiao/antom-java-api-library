@@ -36,6 +36,8 @@ $(modelGen): target/spec $(openapi-generator-jar)
 		--inline-schema-name-mappings DonationPaymentRequest_paymentMethod=DonationPaymentMethod \
 		--additional-properties=dateLibrary=java8 \
 		--additional-properties=openApiNullable=false \
+		--enable-post-process-file \
+        --global-property supportPython2=true \
 		--additional-properties=resourceClass=$(resourceClass)Resource
 	mv $(output)/$(models)/$@ $(models)/$@
 	mv $(output)/$(models)/JSON.java $(models)/$@
@@ -66,6 +68,8 @@ $(bigServices): target/spec $(openapi-generator-jar)
 		--inline-schema-name-mappings PaymentRequest_paymentMethod=CheckoutPaymentMethod \
 		--inline-schema-name-mappings DonationPaymentRequest_paymentMethod=DonationPaymentMethod \
 		--additional-properties=dateLibrary=java8 \
+		--enable-post-process-file \
+		--global-property supportPython2=true \
 		--additional-properties=openApiNullable=false
 	mv $(output)/$(models)/$@ $(models)/$@
 	mv $(output)/src/main/java/com/antom/request/JSON.java $(models)/$@
@@ -95,6 +99,8 @@ $(singleFileServices): target/spec $(openapi-generator-jar)
 		--inline-schema-name-mappings DonationPaymentRequest_paymentMethod=DonationPaymentMethod \
 		--additional-properties=dateLibrary=java8 \
 		--additional-properties=openApiNullable=false \
+		--enable-post-process-file \
+        --global-property supportPython2=true \
 		--additional-properties=smallServiceName=$(smallServiceName)
 	mv $(output)/$(models)/$@ $(models)/$@
 	mv $(output)/src/main/java/com/antom/JSON.java $(models)/$@
