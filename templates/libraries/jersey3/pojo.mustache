@@ -1,7 +1,9 @@
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}
  * serviceNameRequest: {{serviceNameRequest}}
- * url: {{#vendorExtensions.x-basePath}} {{{.}}} {{/vendorExtensions.x-basePath}}
+ * url: {{vendorExtensions.x-basePath}}
+ * version: {{vendorExtensions.x-addedInVersion}}
+ * {{description}}
  */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
