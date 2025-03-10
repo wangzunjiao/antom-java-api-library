@@ -1,6 +1,7 @@
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}
  * serviceNameRequest: {{serviceNameRequest}}
+ * url: {{servers.0.url}}
  */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -57,7 +58,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} {{servers.0.url}}
+{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} 11111
 {{/lambdas.equals}}
 
 
