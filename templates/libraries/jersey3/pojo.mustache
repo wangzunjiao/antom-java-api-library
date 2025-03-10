@@ -56,13 +56,9 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-{{#equals serviceNameRequest classname}}
-    // serviceNameRequest: {{serviceNameRequest}}
-{{/equals serviceNameRequest classname}}
-
-
-
-
+{{#if serviceNameRequest == classname}}  // 改用Groovy原生比较运算符<sup>1</sup><sup>6</sup><sup>8</sup>
+// serviceNameRequest: {{serviceNameRequest}}
+{{/if}}
 
 
 }
