@@ -56,17 +56,25 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
+{{#isNameEqual}}
+    // 当 {{classname}} 和 {{serviceNameRequest}} 相等时的代码
+{{/isNameEqual}}
+{{^isNameEqual}}
+    // 当 {{classname}} 和 {{serviceNameRequest}} 不相等时的代码
+{{/isNameEqual}}
 
-{{#lambda.equals classname serviceNameRequest}}
+
+
+{{#lambdas.equals}}{{classname}} {{serviceNameRequest}}
     // 当name和newName相等时的代码
     // classname: {{classname}};
     // serviceNameRequest: {{serviceNameRequest}};
-{{/lambda.equals classname serviceNameRequest}}
-{{^lambda.equals classname serviceNameRequest}}
+{{/lambdas.equals}}
+{{#lambdas.equals}}{{classname}} {{serviceNameRequest}}
     // 当name和newName不相等时的代码
     // classname: {{classname}};
     // serviceNameRequest: {{serviceNameRequest}};
-{{/lambda.equals classname serviceNameRequest}}
+{{/lambdas.equals}}
 
 
 
