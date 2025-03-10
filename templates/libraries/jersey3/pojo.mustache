@@ -1,9 +1,11 @@
 /**
 * {{description}}{{^description}}{{classname}}{{/description}}
 * DEBUG: url values:
-* 1. From servers: {{#servers}}{{#-first}}{{url}}{{/-first}}{{/servers}}
-* 2. From basePath: {{{basePath}}}
-* 3. From info.x-basePath: {{info.x-basePath}}
+* 1. From servers: {{#swagger.servers}}{{url}}{{/swagger.servers}}
+* 2. From basePath: {{swagger.basePath}}
+* 3. From info.x-basePath: {{swagger.info.x-basePath}}
+* 4. Raw servers: {{swagger.servers}}
+* 5. Raw info: {{swagger.info}}
 */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
