@@ -1,10 +1,10 @@
 /**
- * {{description}}{{^description}}{{classname}}{{/description}}
- * serviceNameRequest: {{serviceNameRequest}}
- * url: {{{basePath}}}
- * url1: {{#servers}}{{#-first}}{{url}}{{/-first}}{{/servers}}
- * {{description}}
- */
+* {{description}}{{^description}}{{classname}}{{/description}}
+* DEBUG: url values:
+* 1. From servers: {{#servers}}{{#-first}}{{url}}{{/-first}}{{/servers}}
+* 2. From basePath: {{{basePath}}}
+* 3. From info.x-basePath: {{info.x-basePath}}
+*/
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
 {{#description}}
