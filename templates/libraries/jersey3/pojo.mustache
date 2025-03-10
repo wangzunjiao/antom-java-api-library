@@ -56,9 +56,12 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-{{#equals serviceNameRequest classname}}
-    // 这里放置serviceName与classname相同时需要添加的代码
+{{#equals }}{{serviceNameRequest}} {{classname}}
+    // serviceNameRequest: {{serviceNameRequest}}
 {{/equals}}
+
+
+
 
 
 
