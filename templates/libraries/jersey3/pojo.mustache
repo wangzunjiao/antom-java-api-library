@@ -1,8 +1,6 @@
 /**
  * {{description}}{{^description}}{{classname}}{{/description}}
- * DEBUG: classname={{classname}}
- * DEBUG: parentSchema={{parentSchema}}
- * DEBUG: baseType={{baseType}}
+ * serviceNameRequest: {{serviceNameRequest}}
  */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -17,7 +15,6 @@
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
 {{/vendorExtensions.x-class-extra-annotation}}
-// serviceName {{serviceName}}
 public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
 {{#serializableModel}}
   private static final long serialVersionUID = 1L;
@@ -56,6 +53,13 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
     {{/vendorExtensions.x-is-jackson-optional-nullable}}
 
 {{/vars}}
+
+
+
+{{#equals serviceNameRequest classname}}
+    // 这里放置serviceName与classname相同时需要添加的代码
+{{/equals}}
+
 
 
 }

@@ -118,10 +118,10 @@ $(openapi-generator-jar):
 
 
 # Discard generated artifacts and changed models
-#clean:
-#	rm -rf $(output)
-#	git checkout $(models)
-#	git clean -f -d $(models)
+clean:
+	rm -rf $(output)
+	git checkout $(models)
+	git clean -f -d $(models)
 
 
 .PHONY: templates models $(services)
