@@ -1,11 +1,5 @@
 /**
 * {{description}}{{^description}}{{classname}}{{/description}}
-* DEBUG: url values:
-* 1. From servers: {{#swagger.servers}}{{url}}{{/swagger.servers}}
-* 2. From basePath: {{swagger.basePath}}
-* 3. From info.x-basePath: {{swagger.info.x-basePath}}
-* 4. Raw servers: {{swagger.servers}}
-* 5. Raw info: {{swagger.info}}
 */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -62,7 +56,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} 11111
+{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} {{serverUrl}}
 {{/lambdas.equals}}
 
 
