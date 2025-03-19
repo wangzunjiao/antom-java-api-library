@@ -1,6 +1,5 @@
 /**
 * {{description}}{{^description}}{{classname}}{{/description}}
-* serverUrl : {{serverUrl}}
 */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -20,19 +19,8 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
   private static final long serialVersionUID = 1L;
 {{/serializableModel}}
 
-{{#vars}}
-    {{#isEnum}}
-        {{^isContainer}}
-            {{^vendorExtensions.x-enum-as-string}}
-                {{>modelInnerEnum}}
-            {{/vendorExtensions.x-enum-as-string}}
-        {{/isContainer}}
-        {{#isContainer}}
-            {{#mostInnerItems}}
-                {{>modelInnerEnum}}
-            {{/mostInnerItems}}
-        {{/isContainer}}
-    {{/isEnum}}
+
+
 
 
     {{^vendorExtensions.x-is-jackson-optional-nullable}}
@@ -57,7 +45,7 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 
 
-{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} 1111
+{{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} {{serverUrl}}
 {{/lambdas.equals}}
 
 
