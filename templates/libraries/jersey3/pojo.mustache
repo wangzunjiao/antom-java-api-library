@@ -14,7 +14,7 @@
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
 {{/vendorExtensions.x-class-extra-annotation}}
-public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
+public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}} {{#vendorExtensions.x-implements}}{{#-first}}implements {{{.}}}{{/-first}}{{^-first}}, {{{.}}}{{/-first}}{{#-last}} {{/-last}}{{/vendorExtensions.x-implements}}{
 {{#serializableModel}}
   private static final long serialVersionUID = 1L;
 {{/serializableModel}}
@@ -59,6 +59,11 @@ public class {{classname}} {{#parent}}extends {{{.}}} {{/parent}} {{#vendorExten
 
 {{#lambdas.equals}}{{classname}}  {{serviceNameRequest}} {{serverUrl}}
 {{/lambdas.equals}}
+
+
+{{#lambdas.parent}}{{classname}} 2
+{{/lambdas.parent}}
+
 
 
 
