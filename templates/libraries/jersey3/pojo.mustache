@@ -6,6 +6,9 @@
 {{#description}}
 @ApiModel(description = "{{{.}}}")
 {{/description}}
+{{#lambdas.lombokRequest}}
+    {{classname}}
+{{/lambdas.lombokRequest}}
 {{>additionalModelTypeAnnotations}}{{#discriminator}}{{>typeInfoAnnotation}}{{/discriminator}}{{>xmlAnnotation}}
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
