@@ -6,10 +6,6 @@
 {{#description}}
 @ApiModel(description = "{{{.}}}")
 {{/description}}
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 {{>additionalModelTypeAnnotations}}{{#discriminator}}{{>typeInfoAnnotation}}{{/discriminator}}{{>xmlAnnotation}}
 {{#vendorExtensions.x-class-extra-annotation}}
 {{{vendorExtensions.x-class-extra-annotation}}}
