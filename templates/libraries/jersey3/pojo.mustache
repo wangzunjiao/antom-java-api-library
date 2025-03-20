@@ -2,8 +2,7 @@
 * {{description}}{{^description}}{{classname}}{{/description}}
 * {{info}}
 * {{infoBasePath}}
-* {{#vendorExtensions.x-publicVersion}}111111{{/vendorExtensions.x-publicVersion}}
-* {{#vendorExtensions.x-basePath}} 1111 {{/vendorExtensions.x-basePath}}
+* {{^vendorExtensions.x-skip-result}}111111{{/vendorExtensions.x-skip-result}}
 */
 {{#isDeprecated}}
 @Deprecated{{/isDeprecated}}
@@ -24,6 +23,8 @@ public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}
 
 
 {{#vars}}
+
+    {{^vendorExtensions.x-skip-result}}
     {{#isEnum}}
         {{^isContainer}}
             {{^vendorExtensions.x-enum-as-string}}
@@ -54,7 +55,7 @@ public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}
 
         {{/isContainer}}
     {{/vendorExtensions.x-is-jackson-optional-nullable}}
-
+    {{/vendorExtensions.x-skip-result}}
 {{/vars}}
 
 
