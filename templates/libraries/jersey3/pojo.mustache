@@ -1,8 +1,5 @@
 /**
 * {{description}}{{^description}}{{classname}}{{/description}}
-* {{info}}
-* {{infoBasePath}}
-* {{^vendorExtensions.x-skip-result}}111111{{/vendorExtensions.x-skip-result}}
 */
 {{#isDeprecated}}
     @Deprecated{{/isDeprecated}}
@@ -23,10 +20,9 @@ public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}
 
 
 {{#vars}}
-
-    {{#lambdas.result}}
+    {{#lambdas.skipResult}}
         {{#shouldRender}}
-            //DEBUG: {{name}} is shouldRender? {{shouldRender}}
+
             {{#isEnum}}
                 {{^isContainer}}
                     {{^vendorExtensions.x-enum-as-string}}
@@ -54,12 +50,11 @@ public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}
                         eprecated {{#vendorExtensions.x-deprecatedInVersion}}since {{#appName}}{{{.}}}{{/appName}} v{{.}}{{/vendorExtensions.x-deprecatedInVersion}}{{#vendorExtensions.x-deprecatedMessage}}: {{{.}}}{{/vendorExtensions.x-deprecatedMessage}}
                     {{/deprecated}}
                     private {{{datatypeWithEnum}}} {{name}};
-
                 {{/isContainer}}
             {{/vendorExtensions.x-is-jackson-optional-nullable}}
 
         {{/shouldRender}}
-    {{/lambdas.result}}
+    {{/lambdas.skipResult}}
 
 
 {{/vars}}
