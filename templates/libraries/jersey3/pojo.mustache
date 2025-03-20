@@ -27,7 +27,7 @@ public class {{classname}} {{#lambdas.parent}}{{classname}} 1 {{/lambdas.parent}
     //DEBUG: {{name}} is shouldRender? {{shouldRender}}
 
     {{#lambdas.result}} {{name}}
-        {{#shouldRender}}
+        {{^shouldRender}}
             //DEBUG: {{name}} is shouldRender? {{shouldRender}}
             {{#isEnum}}
                 {{^isContainer}}
