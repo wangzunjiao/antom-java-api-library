@@ -11,8 +11,9 @@ import io.swagger.annotations.ApiModel;
 import com.antom.request.AlipayRequest;
 import com.antom.response.AlipayResponse;
 {{#imports}}
-    {{#lambdas.skipResultImport}}{{/lambdas.skipResultImport}}
+    {{#lambdas.skipResultImport}}
     import {{import}};
+    {{/lambdas.skipResultImport}}
 {{/imports}}
 
 {{#serializableModel}}
