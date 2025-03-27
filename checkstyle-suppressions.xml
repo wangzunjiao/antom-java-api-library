@@ -1,13 +1,17 @@
+<?xml version="1.0"?>
 <!DOCTYPE suppressions PUBLIC
-        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
-        "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+        "-//Puppy Crawl//DTD Suppressions 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
 <suppressions>
     <!-- 排除DTO类 -->
-    <suppress files="src/main/java/com/antom/model/.*Dto\.java" checks="JavadocType"/>
+    <suppress files="src/main/java/com/antom/model/.*Dto\.java"
+              checks="JavadocType"/>
 
     <!-- 排除自动生成代码 -->
-    <suppress files="src/main/java/com/antom/response/Result\.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src/main/java/com/antom/response/Result\.java"
+              checks=".*"/>
 
     <!-- 排除测试代码 -->
-    <suppress files="src/test/java/.*" checks="[a-zA-Z0-9]*"/>
+    <suppress files="src/test/java/.*"
+              checks=".*"/>
 </suppressions>
