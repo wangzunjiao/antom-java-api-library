@@ -1,4 +1,13 @@
-<!DOCTYPE suppressions PUBLIC "-//Puppy Crawl//DTD Suppressions 1.1//EN" "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+<!DOCTYPE suppressions PUBLIC
+        "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+        "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 <suppressions>
-    <suppress files="src/main/java/com.adyen/service/*" checks="[a-zA-Z0-9]*" />
+    <!-- 排除DTO类 -->
+    <suppress files="src/main/java/com/antom/model/.*Dto\.java" checks="JavadocType"/>
+
+    <!-- 排除自动生成代码 -->
+    <suppress files="src/main/java/com/antom/response/Result\.java" checks="[a-zA-Z0-9]*"/>
+
+    <!-- 排除测试代码 -->
+    <suppress files="src/test/java/.*" checks="[a-zA-Z0-9]*"/>
 </suppressions>
