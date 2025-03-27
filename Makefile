@@ -44,6 +44,7 @@ $(modelGen): target/spec $(openapi-generator-jar)
 		--additional-properties=dateLibrary=java8 \
 		--additional-properties=openApiNullable=false \
 		--enable-post-process-file \
+		--global-property postProcessFile="java -jar $(GOOGLE_JAVA_FORMAT_JAR) --replace"\
         --global-property supportPython2=true \
 		--additional-properties=resourceClass=$(resourceClass)Resource
 	mv $(output)/$(models)/$@ $(models)/$@
