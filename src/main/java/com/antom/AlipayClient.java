@@ -6,6 +6,5 @@ import com.antom.response.AlipayResponse;
 
 public interface AlipayClient {
 
-    <T extends AlipayResponse> T execute(AlipayRequest<T> alipayRequest) throws AlipayApiException;
-
+  <T extends AlipayResponse> T execute(AlipayRequest<T> alipayRequest) throws AlipayApiException;
 }
