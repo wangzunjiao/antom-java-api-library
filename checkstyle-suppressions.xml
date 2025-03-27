@@ -3,15 +3,4 @@
         "-//Puppy Crawl//DTD Suppressions 1.2//EN"
         "https://checkstyle.org/dtds/suppressions_1_2.dtd">
 <suppressions>
-    <!-- 排除DTO类 -->
-    <suppress files="src/main/java/com/antom/model/.*Dto\.java"
-              checks="JavadocType"/>
-
-    <!-- 排除自动生成代码 -->
-    <suppress files="src/main/java/com/antom/response/Result\.java"
-              checks=".*"/>
-
-    <!-- 排除测试代码 -->
-    <suppress files="src/test/java/.*"
-              checks=".*"/>
 </suppressions>
