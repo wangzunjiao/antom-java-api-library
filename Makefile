@@ -5,8 +5,6 @@ openapi-generator-cli:=java -jar $(openapi-generator-jar) # 运行生成器的�
 
 GOOGLE_JAVA_FORMAT_VERSION := 1.17.0
 GOOGLE_JAVA_FORMAT_JAR := target/google-java-format.jar
-$(GOOGLE_JAVA_FORMAT_JAR):
-    wget https://github.com/google/google-java-format/releases/download/v$(GOOGLE_JAVA_FORMAT_VERSION)/google-java-format-$(GOOGLE_JAVA_FORMAT_VERSION)-all-deps.jar -O $@
 
 generator:=java
 library:=jersey3 # 定义 Java 生成器和库（这里使用 jersey3）。
@@ -131,6 +129,9 @@ templates: $(openapi-generator-jar)
 # Download the generator
 $(openapi-generator-jar):
 	wget --quiet -o /dev/null $(openapi-generator-url) -O $(openapi-generator-jar)
+
+$(GOOGLE_JAVA_FORMAT_JAR):
+    wget https://github.com/google/google-java-format/releases/download/v$(GOOGLE_JAVA_FORMAT_VERSION)/google-java-format-$(GOOGLE_JAVA_FORMAT_VERSION)-all-deps.jar -O $@
 
 
 # Discard generated artifacts and changed models
