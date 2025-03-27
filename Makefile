@@ -3,15 +3,22 @@ openapi-generator-url:=https://repo1.maven.org/maven2/org/openapitools/openapi-g
 openapi-generator-jar:=target/openapi-generator-cli.jar # 生成器 JAR 文件的存放路径。
 openapi-generator-cli:=java -jar $(openapi-generator-jar) # 运行生成器的命令。
 
+GOOGLE_JAVA_FORMAT_VERSION := 1.17.0
+GOOGLE_JAVA_FORMAT_JAR := target/google-java-format.jar
+$(GOOGLE_JAVA_FORMAT_JAR):
+    wget https://github.com/google/google-java-format/releases/download/v$(GOOGLE_JAVA_FORMAT_VERSION)/google-java-format-$(GOOGLE_JAVA_FORMAT_VERSION)-all-deps.jar -O $@
+
 generator:=java
 library:=jersey3 # 定义 Java 生成器和库（这里使用 jersey3）。
-modelGen:=consult # 需要生成模型的服务列表。
+modelGen:=consult $(GOOGLE_JAVA_FORMAT_JAR) # 需要生成模型的服务列表。
 models:=src/main/java/com/antom/model #生成模型的存放路径。
 output:=target/out #生成输出的临时目录。
 
 
+
 # Generate models (for each service)
 models: $(modelGen)
+
 
 
 consult: spec=ConsultRequest-v1
@@ -69,6 +76,7 @@ $(bigServices): target/spec $(openapi-generator-jar)
 		--inline-schema-name-mappings DonationPaymentRequest_paymentMethod=DonationPaymentMethod \
 		--additional-properties=dateLibrary=java8 \
 		--enable-post-process-file \
+		--global-property postProcessFile="java -jar $(GOOGLE_JAVA_FORMAT_JAR) --replace"\
 		--global-property supportPython2=true \
 		--additional-properties=openApiNullable=false
 	mv $(output)/$(models)/$@ $(models)/$@
@@ -100,6 +108,7 @@ $(singleFileServices): target/spec $(openapi-generator-jar)
 		--additional-properties=dateLibrary=java8 \
 		--additional-properties=openApiNullable=false \
 		--enable-post-process-file \
+		--global-property postProcessFile="java -jar $(GOOGLE_JAVA_FORMAT_JAR) --replace" \
         --global-property supportPython2=true \
 		--additional-properties=smallServiceName=$(smallServiceName)
 	mv $(output)/$(models)/$@ $(models)/$@
