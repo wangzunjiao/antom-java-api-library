@@ -18,4 +18,4 @@ jobs:
           distribution: 'adopt'
           
       - name: Run the tests with Maven
-        run: mvn -B clean test package #-Dcheckstyle.skip=true --no-transfer-progress
+        run: mvn -B clean test package -Dcheckstyle.skip=true --no-transfer-progress
