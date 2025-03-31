@@ -12,8 +12,4 @@ import java.util.List;
 @Data
 public class AlipayPayConsultResponse extends AlipayResponse {
 
-    private List<PaymentOption> paymentOptions;
-    private List<PaymentMethodInfo> paymentMethodInfos;
-    private String extendInfo;
-
 }
