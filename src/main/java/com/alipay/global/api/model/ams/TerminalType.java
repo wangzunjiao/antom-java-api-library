@@ -1,13 +1,11 @@
 package com.alipay.global.api.model.ams;
 
 public enum TerminalType {
+  WEB,
 
-    WEB,
+  WAP,
 
-    WAP,
+  APP,
 
-    APP,
-
-    MINI_APP;
-
+  MINI_APP;
 }

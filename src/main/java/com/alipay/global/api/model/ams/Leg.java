@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Leg {
-    private String departureTime;
-    private String arrivalTime;
-    private Address departureAddress;
-    private Address arrivalAddress;
-    private String carrierName;
-    private String carrierNo;
-    private ClassType classType;
-    private String departureAirportCode;
-    private String arrivalAirportCode;
+  private String departureTime;
+  private String arrivalTime;
+  private Address departureAddress;
+  private Address arrivalAddress;
+  private String carrierName;
+  private String carrierNo;
+  private ClassType classType;
+  private String departureAirportCode;
+  private String arrivalAirportCode;
 }

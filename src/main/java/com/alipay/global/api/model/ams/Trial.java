@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Trial {
 
-    private Integer trialStartPeriod;
+  private Integer trialStartPeriod;
 
-    private Amount trialAmount;
+  private Amount trialAmount;
 
-    private Integer trialEndPeriod;
-
+  private Integer trialEndPeriod;
 }

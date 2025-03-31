@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TransferFromDetail {
 
-    private PaymentMethod transferFromMethod;
-    private Amount transferFromAmount;
+  private PaymentMethod transferFromMethod;
+  private Amount transferFromAmount;
 }
