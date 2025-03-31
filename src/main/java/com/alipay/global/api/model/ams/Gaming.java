@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Gaming {
 
-    private String gameName;
-    private String toppedUpUser;
-    private String toppedUpEmail;
-    private String toppedUpPhoneNo;
+  private String gameName;
+  private String toppedUpUser;
+  private String toppedUpEmail;
+  private String toppedUpPhoneNo;
 }

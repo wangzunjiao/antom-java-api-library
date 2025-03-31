@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class DiscountPaymentMethodDetail {
 
-    private String discountId;
-    private Amount availableAmount;
-    private String discountName;
-    private String discountDescription;
-    private String paymentMethodDetailMetadata;
-
+  private String discountId;
+  private Amount availableAmount;
+  private String discountName;
+  private String discountDescription;
+  private String paymentMethodDetailMetadata;
 }

@@ -11,16 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Plan {
 
-    private String interestRate;
+  private String interestRate;
 
-    private Amount minInstallmentAmount;
+  private Amount minInstallmentAmount;
 
-    private Amount maxInstallmentAmount;
+  private Amount maxInstallmentAmount;
 
-    private String installmentNum;
+  private String installmentNum;
 
-    private String interval;
+  private String interval;
 
-    private boolean enabled;
-
+  private boolean enabled;
 }

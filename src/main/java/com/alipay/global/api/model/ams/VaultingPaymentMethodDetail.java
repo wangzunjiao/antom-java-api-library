@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VaultingPaymentMethodDetail {
-    private String paymentMethodType;
-    private VaultingCard card;
-
+  private String paymentMethodType;
+  private VaultingCard card;
 }

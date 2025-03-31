@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PaymentMethodInfo {
 
-    private String paymentMethodType;
-    private String paymentMethodDetail;
-    private boolean enabled;
-    private boolean preferred;
-    private String extendInfo;
-
+  private String paymentMethodType;
+  private String paymentMethodDetail;
+  private boolean enabled;
+  private boolean preferred;
+  private String extendInfo;
 }
