@@ -11,11 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CouponPaymentMethodDetail {
 
-    private String couponId;
-    private Amount availableAmount;
-    private String couponName;
-    private String couponDescription;
-    private String couponExpireTime;
-    private String paymentMethodDetailMetadata;
-
+  private String couponId;
+  private Amount availableAmount;
+  private String couponName;
+  private String couponDescription;
+  private String couponExpireTime;
+  private String paymentMethodDetailMetadata;
 }

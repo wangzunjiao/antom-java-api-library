@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentVerificationData {
-    private String verifyRequestId;
-    private String authenticationCode;
-
+  private String verifyRequestId;
+  private String authenticationCode;
 }

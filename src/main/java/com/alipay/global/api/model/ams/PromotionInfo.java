@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PromotionInfo {
 
-    private PromotionType promotionType;
+  private PromotionType promotionType;
 
-    private Discount discount;
+  private Discount discount;
 
-    private InterestFree interestFree;
-
+  private InterestFree interestFree;
 }
