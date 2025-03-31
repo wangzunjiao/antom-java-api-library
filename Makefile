@@ -33,7 +33,7 @@ $(modelGen): target/spec $(openapi-generator-jar)
 		--reserved-words-mappings configuration=configuration \
 		--ignore-file-override ./.openapi-generator-ignore \
 		--skip-validate-spec \
-		--model-package $(subst /,.,com.alipay.global.api.model) \
+		--model-package $(subst /,.,com.alipay.global.api.model.ams) \
 		--library $(library) \
 		--global-property modelDocs=false \
 		--global-property modelTests=false \
@@ -65,7 +65,7 @@ $(bigServices): target/spec $(openapi-generator-jar)
 		--reserved-words-mappings configuration=configuration \
 		--ignore-file-override ./.openapi-generator-ignore \
 		--skip-validate-spec \
-		--model-package $(subst /,.,com.alipay.global.api.model) \
+		--model-package $(subst /,.,com.alipay.global.api.model.ams) \
 		--library $(library) \
 		--api-package com.antom.request.$@ \
 		--api-name-suffix Api \
@@ -95,7 +95,7 @@ $(singleFileServices): target/spec $(openapi-generator-jar)
 		--reserved-words-mappings configuration=configuration \
 		--ignore-file-override ./.openapi-generator-ignore \
 		--skip-validate-spec \
-		--model-package $(subst /,.,com.alipay.global.api.model) \
+		--model-package $(subst /,.,com.alipay.global.api.model.ams) \
 		--library $(library) \
 		--additional-properties customApi=$@ \
 		--api-package com.antom.service \
