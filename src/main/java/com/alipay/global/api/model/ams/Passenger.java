@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Passenger {
-    private UserName passengerName;
-    private String passengerEmail;
-    private String passengerPhoneNo;
+  private UserName passengerName;
+  private String passengerEmail;
+  private String passengerPhoneNo;
 }

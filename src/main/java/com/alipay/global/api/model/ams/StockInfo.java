@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StockInfo {
-    private String listedRegion;
-    private String tickerSymbol;
+  private String listedRegion;
+  private String tickerSymbol;
 }

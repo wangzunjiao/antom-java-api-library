@@ -10,14 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RiskOrder {
-    /**
-     * The order type
-     */
-    private String orderType;
+  /** The order type */
+  private String orderType;
 
-    /**
-     * The webpage where the buyer accessed the merchant.
-     */
-    private String referringSite;
-
+  /** The webpage where the buyer accessed the merchant. */
+  private String referringSite;
 }

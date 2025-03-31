@@ -10,13 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Merchant {
-    private String referenceMerchantId;
-    private String merchantMCC;
-    private String merchantName;
-    private String merchantDisplayName;
-    private Address merchantAddress;
-    private String merchantRegisterDate;
-    private Store store;
-    private MerchantType merchantType;
-
+  private String referenceMerchantId;
+  private String merchantMCC;
+  private String merchantName;
+  private String merchantDisplayName;
+  private Address merchantAddress;
+  private String merchantRegisterDate;
+  private Store store;
+  private MerchantType merchantType;
 }
