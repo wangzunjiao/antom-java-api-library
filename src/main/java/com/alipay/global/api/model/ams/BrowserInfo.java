@@ -11,29 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BrowserInfo {
 
-    /**
-     * The accept header of the user's browser
-     */
-    private String acceptHeader;
+  /** The accept header of the user's browser */
+  private String acceptHeader;
 
-    /**
-     * Indicates whether the user's browser is able to run Java
-     */
-    private Boolean javaEnabled;
+  /** Indicates whether the user's browser is able to run Java */
+  private Boolean javaEnabled;
 
-    /**
-     * Indicates whether the user's browser is able to run Java
-     */
-    private Boolean javaScriptEnabled;
+  /** Indicates whether the user's browser is able to run Java */
+  private Boolean javaScriptEnabled;
 
-    /**
-     * The language of the user's browser
-     */
-    private String language;
+  /** The language of the user's browser */
+  private String language;
 
-    /**
-     * The user agent of the user's browser
-     */
-    private String userAgent;
-
+  /** The user agent of the user's browser */
+  private String userAgent;
 }

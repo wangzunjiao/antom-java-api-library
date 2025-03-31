@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SupportBank {
 
-    private String bankIdentifierCode;
+  private String bankIdentifierCode;
 
-    private String bankShortName;
+  private String bankShortName;
 
-    private Logo bankLogo;
-
+  private Logo bankLogo;
 }

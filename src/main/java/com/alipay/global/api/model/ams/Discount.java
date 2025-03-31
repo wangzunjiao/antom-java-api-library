@@ -11,9 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Discount {
 
-    private String discountTag;
-    private String discountName;
-    private Amount savingsAmount;
-    private Amount estimateSavingsAmount;
-
+  private String discountTag;
+  private String discountName;
+  private Amount savingsAmount;
+  private Amount estimateSavingsAmount;
 }

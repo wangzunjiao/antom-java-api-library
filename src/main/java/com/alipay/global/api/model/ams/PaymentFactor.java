@@ -11,14 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PaymentFactor {
 
-    private Boolean isPaymentEvaluation;
+  private Boolean isPaymentEvaluation;
 
-    private InStorePaymentScenario inStorePaymentScenario;
+  private InStorePaymentScenario inStorePaymentScenario;
 
-    private PresentmentMode presentmentMode;
+  private PresentmentMode presentmentMode;
 
-    private String captureMode;
+  private String captureMode;
 
-    private Boolean isAuthorization;
-
+  private Boolean isAuthorization;
 }
