@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SettlementDetail {
 
-    private SettleToType settleTo;
-    private Amount settlementAmount;
+  private SettleToType settleTo;
+  private Amount settlementAmount;
 }

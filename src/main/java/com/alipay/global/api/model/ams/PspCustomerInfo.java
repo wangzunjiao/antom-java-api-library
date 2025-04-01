@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PspCustomerInfo {
-    private String pspName;
-    private String pspCustomerId;
-    private String displayCustomerId;
-    private String displayCustomerName;
-    private String customer2088Id;
-    private String extendInfo;
+  private String pspName;
+  private String pspCustomerId;
+  private String displayCustomerId;
+  private String displayCustomerName;
+  private String customer2088Id;
+  private String extendInfo;
 }

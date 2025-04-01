@@ -11,9 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ChallengeActionForm {
 
-    private ChallengeType challengeType;
-    private String challengeRenderValue;
-    private ChallengeTriggerSourceType triggerSource;
-    private String extendInfo;
-
+  private ChallengeType challengeType;
+  private String challengeRenderValue;
+  private ChallengeTriggerSourceType triggerSource;
+  private String extendInfo;
 }
