@@ -1,56 +1,55 @@
 package com.alipay.global.api.model.ams;
 
 public enum CustomerBelongsTo {
+  RABBIT_LINE_PAY,
 
-    RABBIT_LINE_PAY,
+  TRUEMONEY,
 
-    TRUEMONEY,
+  ALIPAY_HK,
 
-    ALIPAY_HK,
+  TNG,
 
-    TNG,
+  ALIPAY_CN,
 
-    ALIPAY_CN,
+  GCASH,
 
-    GCASH,
+  DANA,
 
-    DANA,
+  KAKAOPAY,
 
-    KAKAOPAY,
+  BKASH,
 
-    BKASH,
+  EASYPAISA,
 
-    EASYPAISA,
+  PAYPAY,
 
-    PAYPAY,
+  BOOST,
 
-    BOOST,
+  GRABPAY_MY,
 
-    GRABPAY_MY,
+  MAYA,
 
-    MAYA,
+  GRABPAY_PH,
 
-    GRABPAY_PH,
+  GRABPAY_SG,
 
-    GRABPAY_SG,
+  NAVERPAY,
 
-    NAVERPAY,
+  JKOPAY,
 
-    JKOPAY,
+  KPLUS,
 
-    KPLUS,
+  DIRECT_DEBIT_SIAMCOMMERCIALBANK,
 
-    DIRECT_DEBIT_SIAMCOMMERCIALBANK,
+  DIRECT_DEBIT_KRUNGTHAIBANK,
 
-    DIRECT_DEBIT_KRUNGTHAIBANK,
+  ZALOPAY,
 
-    ZALOPAY,
+  DIRECTDEBIT_YAPILY,
 
-    DIRECTDEBIT_YAPILY,
+  TOSSPAY,
 
-    TOSSPAY,
+  MOMO,
 
-    MOMO,
-
-    ANTOM_BIZ_ACCOUNT;
+  ANTOM_BIZ_ACCOUNT;
 }

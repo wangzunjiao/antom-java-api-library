@@ -15,16 +15,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AcquirerInfo {
 
-    private String acquirerName;
+  private String acquirerName;
 
-    private String referenceRequestId;
+  private String referenceRequestId;
 
-    private String acquirerTransactionId;
+  private String acquirerTransactionId;
 
-    private String acquirerMerchantId;
+  private String acquirerMerchantId;
 
-    private String acquirerResultCode;
+  private String acquirerResultCode;
 
-    private String acquirerResultMessage;
-
+  private String acquirerResultMessage;
 }
