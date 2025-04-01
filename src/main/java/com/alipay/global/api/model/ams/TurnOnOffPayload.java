@@ -22,8 +22,6 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
-    import com.alipay.global.api.model.ams.Plan;
-    import com.alipay.global.api.model.ams.SupportCardBrand;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -31,8 +29,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
-    import java.util.ArrayList;
-    import java.util.List;
+    import java.time.OffsetDateTime;
 
 
 
@@ -41,7 +38,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* Installment
+* TurnOnOffPayload
 */
 
  @Data 
@@ -49,20 +46,55 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class Installment  {
+public class TurnOnOffPayload  {
+
+
+
+                          /**
+   * Whether to turn on or off the light.
+   */
+  public enum CommandEnum {
+    ON("on"),
+    
+    OFF("off");
+
+    private String value;
+
+    CommandEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CommandEnum fromValue(String value) {
+      for (CommandEnum b : CommandEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+
+
+                    private CommandEnum command;
 
 
 
 
 
-                    private List<SupportCardBrand> supportCardBrands = new ArrayList<>();
 
-
-
-
-
-
-                    private List<Plan> plans = new ArrayList<>();
+                    private OffsetDateTime sentAt;
 
 
 

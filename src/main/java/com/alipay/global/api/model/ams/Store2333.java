@@ -22,8 +22,7 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
-    import com.alipay.global.api.model.ams.Plan;
-    import com.alipay.global.api.model.ams.SupportCardBrand;
+    import com.alipay.global.api.model.ams.Address;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -31,8 +30,6 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
-    import java.util.ArrayList;
-    import java.util.List;
 
 
 
@@ -41,7 +38,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* Installment
+* Store2333
 */
 
  @Data 
@@ -49,20 +46,62 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class Installment  {
+public class Store2333  {
 
 
 
 
 
-                    private List<SupportCardBrand> supportCardBrands = new ArrayList<>();
+                    private String referenceStoreId;
 
 
 
 
 
 
-                    private List<Plan> plans = new ArrayList<>();
+                    private String storeName;
+
+
+
+
+
+
+                    private String storeMCC;
+
+
+
+
+
+
+                    private String storeDisplayName;
+
+
+
+
+
+
+                    private String storeTerminalId;
+
+
+
+
+
+
+                    private String storeOperatorId;
+
+
+
+
+
+
+                    private Address storeAddress;
+
+
+
+
+
+
+                    private String storePhoneNo;
 
 
 

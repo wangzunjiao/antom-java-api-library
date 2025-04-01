@@ -22,8 +22,6 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
-    import com.alipay.global.api.model.ams.Plan;
-    import com.alipay.global.api.model.ams.SupportCardBrand;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -31,8 +29,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
-    import java.util.ArrayList;
-    import java.util.List;
+    import java.time.OffsetDateTime;
 
 
 
@@ -41,7 +38,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* Installment
+* DimLightPayload
 */
 
  @Data 
@@ -49,20 +46,20 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class Installment  {
+public class DimLightPayload  {
 
 
 
 
 
-                    private List<SupportCardBrand> supportCardBrands = new ArrayList<>();
+                    private Integer percentage;
 
 
 
 
 
 
-                    private List<Plan> plans = new ArrayList<>();
+                    private OffsetDateTime sentAt;
 
 
 

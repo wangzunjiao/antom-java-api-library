@@ -11,7 +11,7 @@
  */
 
 
-package com.alipay.global.api.model.ams;
+package com.alipay.global.api.response.ams.pay;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -22,8 +22,8 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
-    import com.alipay.global.api.model.ams.Plan;
-    import com.alipay.global.api.model.ams.SupportCardBrand;
+    import com.alipay.global.api.model.ams.PaymentMethodInfo;
+    import com.alipay.global.api.model.ams.PaymentOption;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -41,28 +41,35 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* Installment
+* AlipayPayConsultResponse
 */
 
+ @EqualsAndHashCode(callSuper = true)
  @Data 
- @Builder 
- @NoArgsConstructor 
- @AllArgsConstructor 
 
-public class Installment  {
-
-
-
-
-
-                    private List<SupportCardBrand> supportCardBrands = new ArrayList<>();
+public class AlipayPayConsultResponse   extends AlipayResponse   {
 
 
 
 
 
 
-                    private List<Plan> plans = new ArrayList<>();
+
+                    private List<PaymentOption> paymentOptions = new ArrayList<>();
+
+
+
+
+
+
+                    private List<PaymentMethodInfo> paymentMethodInfos = new ArrayList<>();
+
+
+
+
+
+
+                    private String extendInfo;
 
 
 
