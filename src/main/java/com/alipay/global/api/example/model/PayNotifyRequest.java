@@ -1,4 +1,5 @@
-package com.alipay.global.api.example.model;
+[package com.alipay.global.api.example.model;, package com.alipay.global.api.example.model;]
+import com.alipay.global.api.response.ams..PayNotifyResponse;
 
 import com.alipay.global.api.model.Result;
 

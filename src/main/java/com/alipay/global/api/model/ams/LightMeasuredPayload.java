@@ -29,6 +29,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
+    import java.time.OffsetDateTime;
 
 
 
@@ -37,7 +38,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* AcquirerInfo
+* LightMeasuredPayload
 */
 
  @Data 
@@ -45,41 +46,20 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AcquirerInfo  {
+public class LightMeasuredPayload  {
 
 
 
 
 
-                    private String acquirerName;
-
-
-
-
-
-
-                    private String referenceRequestId;
+                    private Integer lumens;
 
 
 
 
 
 
-                    private String acquirerTransactionId;
-
-
-
-
-
-
-                    private String acquirerMerchantId;
-
-
-
-
-
-
-                    private String acquirerResultMessage;
+                    private OffsetDateTime sentAt;
 
 
 
