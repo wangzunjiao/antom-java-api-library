@@ -37,7 +37,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* AcquirerInfo
+* PaymentAmount
 */
 
  @Data 
@@ -45,41 +45,20 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AcquirerInfo  {
+public class PaymentAmount  {
 
 
 
 
 
-                    private String acquirerName;
-
-
-
-
-
-
-                    private String referenceRequestId;
+                    private String currency;
 
 
 
 
 
 
-                    private String acquirerTransactionId;
-
-
-
-
-
-
-                    private String acquirerMerchantId;
-
-
-
-
-
-
-                    private String acquirerResultMessage;
+                    private Double value;
 
 
 

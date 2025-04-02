@@ -1,4 +1,5 @@
-package com.alipay.global.api.request;
+[package com.alipay.global.api.request;, package com.alipay.global.api.request;]
+import com.alipay.global.api.response.ams..AlipayResponse;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.global.api.net.HttpMethod;

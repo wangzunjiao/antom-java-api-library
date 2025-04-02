@@ -11,7 +11,7 @@
  */
 
 
-package com.alipay.global.api.model.ams;
+package com.alipay.global.api.response.ams.pay;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -22,6 +22,8 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
+    import com.alipay.global.api.model.ams.PaymentMethodInfo;
+    import com.alipay.global.api.model.ams.PaymentOption;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,6 +31,8 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
+    import java.util.ArrayList;
+    import java.util.List;
 
 
 
@@ -37,49 +41,35 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* AcquirerInfo
+* AlipayPayConsultResponse
 */
 
+ @EqualsAndHashCode(callSuper = true)
  @Data 
- @Builder 
- @NoArgsConstructor 
- @AllArgsConstructor 
 
-public class AcquirerInfo  {
-
-
-
-
-
-                    private String acquirerName;
+public class AlipayPayConsultResponse   extends AlipayResponse   {
 
 
 
 
 
 
-                    private String referenceRequestId;
+
+                    private List<PaymentOption> paymentOptions;
 
 
 
 
 
 
-                    private String acquirerTransactionId;
+                    private List<PaymentMethodInfo> paymentMethodInfos;
 
 
 
 
 
 
-                    private String acquirerMerchantId;
-
-
-
-
-
-
-                    private String acquirerResultMessage;
+                    private String extendInfo;
 
 
 

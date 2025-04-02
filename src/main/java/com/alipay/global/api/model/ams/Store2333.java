@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
 import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
+    import com.alipay.global.api.model.ams.Address;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -37,7 +38,7 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
 
 
                     /**
-* AcquirerInfo
+* Store2333
 */
 
  @Data 
@@ -45,41 +46,62 @@ import com.alipay.global.api.response.ams.pay.AlipayPayConsultResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AcquirerInfo  {
+public class Store2333  {
 
 
 
 
 
-                    private String acquirerName;
-
-
-
-
-
-
-                    private String referenceRequestId;
+                    private String referenceStoreId;
 
 
 
 
 
 
-                    private String acquirerTransactionId;
+                    private String storeName;
 
 
 
 
 
 
-                    private String acquirerMerchantId;
+                    private String storeMCC;
 
 
 
 
 
 
-                    private String acquirerResultMessage;
+                    private String storeDisplayName;
+
+
+
+
+
+
+                    private String storeTerminalId;
+
+
+
+
+
+
+                    private String storeOperatorId;
+
+
+
+
+
+
+                    private Address storeAddress;
+
+
+
+
+
+
+                    private String storePhoneNo;
 
 
 
