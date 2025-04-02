@@ -8,7 +8,7 @@ GOOGLE_JAVA_FORMAT_JAR := target/google-java-format.jar
 
 generator:=java
 library:=jersey3 # 定义 Java 生成器和库（这里使用 jersey3）。
-modelGen:=consult $(GOOGLE_JAVA_FORMAT_JAR) # 需要生成模型的服务列表。
+modelGen:=consult pay # 需要生成模型的服务列表。
 models:=src/main/java/com/alipay/global/api/model/ams #生成模型的存放路径。
 output:=target/out #生成输出的临时目录。
 
@@ -20,6 +20,8 @@ models: $(modelGen)
 
 
 consult: spec=ConsultRequest-v1
+
+pay: spec=PayRequest-v1
 
 
 #服务和模型的生成规则
@@ -49,8 +51,8 @@ $(modelGen): target/spec $(openapi-generator-jar)
 	mv $(output)/$(models)/JSON.java $(models)/$@
 
  #Full service + models automation
-bigServices:=consult
-singleFileServices:=consult
+bigServices:=consult pay
+singleFileServices:=consult pay
 
 services: $(bigServices) $(singleFileServices)
 
