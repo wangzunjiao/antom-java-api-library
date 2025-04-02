@@ -28,6 +28,7 @@ import com.alipay.global.api.response.AlipayResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
+    import java.time.OffsetDateTime;
 
 
 
@@ -36,7 +37,7 @@ import com.alipay.global.api.response.AlipayResponse;
 
 
                     /**
-* AmountLimit
+* DimLightPayload
 */
 
  @Data 
@@ -44,27 +45,20 @@ import com.alipay.global.api.response.AlipayResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AmountLimit  {
+public class DimLightPayload  {
 
 
 
 
 
-                    private String maxAmount;
-
-
-
-
-
-
-                    private String minAmount;
+                    private Integer percentage;
 
 
 
 
 
 
-                    private String remainAmount;
+                    private OffsetDateTime sentAt;
 
 
 

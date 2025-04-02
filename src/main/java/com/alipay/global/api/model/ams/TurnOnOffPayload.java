@@ -28,6 +28,7 @@ import com.alipay.global.api.response.AlipayResponse;
     import com.fasterxml.jackson.annotation.JsonValue;
     import io.swagger.annotations.ApiModel;
     import io.swagger.annotations.ApiModelProperty;
+    import java.time.OffsetDateTime;
 
 
 
@@ -36,7 +37,7 @@ import com.alipay.global.api.response.AlipayResponse;
 
 
                     /**
-* AmountLimit
+* TurnOnOffPayload
 */
 
  @Data 
@@ -44,27 +45,55 @@ import com.alipay.global.api.response.AlipayResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AmountLimit  {
+public class TurnOnOffPayload  {
+
+
+
+                          /**
+   * Whether to turn on or off the light.
+   */
+  public enum CommandEnum {
+    ON("on"),
+    
+    OFF("off");
+
+    private String value;
+
+    CommandEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CommandEnum fromValue(String value) {
+      for (CommandEnum b : CommandEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+
+
+                    private CommandEnum command;
 
 
 
 
 
-                    private String maxAmount;
 
-
-
-
-
-
-                    private String minAmount;
-
-
-
-
-
-
-                    private String remainAmount;
+                    private OffsetDateTime sentAt;
 
 
 

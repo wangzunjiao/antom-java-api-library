@@ -21,6 +21,7 @@ import lombok.*;
 import io.swagger.annotations.ApiModel;
 import com.alipay.global.api.request.AlipayRequest;
 import com.alipay.global.api.response.AlipayResponse;
+    import com.alipay.global.api.model.ams.Address;
     import com.fasterxml.jackson.annotation.JsonInclude;
     import com.fasterxml.jackson.annotation.JsonProperty;
     import com.fasterxml.jackson.annotation.JsonCreator;
@@ -36,7 +37,7 @@ import com.alipay.global.api.response.AlipayResponse;
 
 
                     /**
-* AmountLimit
+* Store2333
 */
 
  @Data 
@@ -44,27 +45,62 @@ import com.alipay.global.api.response.AlipayResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AmountLimit  {
+public class Store2333  {
 
 
 
 
 
-                    private String maxAmount;
-
-
-
-
-
-
-                    private String minAmount;
+                    private String referenceStoreId;
 
 
 
 
 
 
-                    private String remainAmount;
+                    private String storeName;
+
+
+
+
+
+
+                    private String storeMCC;
+
+
+
+
+
+
+                    private String storeDisplayName;
+
+
+
+
+
+
+                    private String storeTerminalId;
+
+
+
+
+
+
+                    private String storeOperatorId;
+
+
+
+
+
+
+                    private Address storeAddress;
+
+
+
+
+
+
+                    private String storePhoneNo;
 
 
 

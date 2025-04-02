@@ -36,7 +36,7 @@ import com.alipay.global.api.response.AlipayResponse;
 
 
                     /**
-* AmountLimit
+* PaymentAmount
 */
 
  @Data 
@@ -44,27 +44,20 @@ import com.alipay.global.api.response.AlipayResponse;
  @NoArgsConstructor 
  @AllArgsConstructor 
 
-public class AmountLimit  {
+public class PaymentAmount  {
 
 
 
 
 
-                    private String maxAmount;
-
-
-
-
-
-
-                    private String minAmount;
+                    private String currency;
 
 
 
 
 
 
-                    private String remainAmount;
+                    private Double value;
 
 
 
