@@ -10,34 +10,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RiskData {
-    /**
-     * The order information used for risk control purposes.
-     */
-    private RiskOrder order;
+  /** The order information used for risk control purposes. */
+  private RiskOrder order;
 
-    /**
-     * The buyer information used for risk control purposes.
-     */
-    private RiskBuyer buyer;
+  /** The buyer information used for risk control purposes. */
+  private RiskBuyer buyer;
 
-    /**
-     * The environment information used for risk control purposes.
-     */
-    private RiskEnv env;
+  /** The environment information used for risk control purposes. */
+  private RiskEnv env;
 
-    /**
-     * The information provided by a merchant to identify a risky transaction.
-     */
-    private RiskSignal riskSignal;
+  /** The information provided by a merchant to identify a risky transaction. */
+  private RiskSignal riskSignal;
 
-    /**
-     * The address information used for risk control purposes.
-     */
-    private RiskAddress address;
+  /** The address information used for risk control purposes. */
+  private RiskAddress address;
 
-    /**
-     * The verification method that a merchant uses for a card payment.
-     */
-    private CardVerificationResult cardVerificationResult;
-
+  /** The verification method that a merchant uses for a card payment. */
+  private CardVerificationResult cardVerificationResult;
 }

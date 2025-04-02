@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthMetaData {
-    private String accountHolderName;
-    private String accountHolderCertNo;
+  private String accountHolderName;
+  private String accountHolderCertNo;
 }
