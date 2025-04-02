@@ -5,14 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class DeliveryEstimate {
 
-    private DeliveryEstimateInfo minimum;
+  private DeliveryEstimateInfo minimum;
 
-    private DeliveryEstimateInfo maximum;
+  private DeliveryEstimateInfo maximum;
 }

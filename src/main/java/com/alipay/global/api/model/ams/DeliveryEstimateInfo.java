@@ -5,16 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class DeliveryEstimateInfo {
 
-    private String unit;
+  private String unit;
 
-    private Integer value;
-
-
+  private Integer value;
 }

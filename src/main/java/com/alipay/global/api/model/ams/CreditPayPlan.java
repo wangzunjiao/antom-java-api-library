@@ -11,9 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CreditPayPlan {
 
-    private int installmentNum;
-    private String interval;
-    private CreditPayFeeType creditPayFeeType;
-    private int feePercentage;
-
+  private int installmentNum;
+  private String interval;
+  private CreditPayFeeType creditPayFeeType;
+  private int feePercentage;
 }
