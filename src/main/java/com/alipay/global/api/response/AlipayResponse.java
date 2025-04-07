@@ -6,14 +6,13 @@ import lombok.Data;
 @Data
 public class AlipayResponse {
 
-    private Result result;
+  private Result result;
 
-    public Result getResult() {
-        return result;
-    }
+  public Result getResult() {
+    return result;
+  }
 
-    public void setResult(Result result) {
-        this.result = result;
-    }
-
+  public void setResult(Result result) {
+    this.result = result;
+  }
 }

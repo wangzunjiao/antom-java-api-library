@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RiskEnv {
-    /**
-     * The type of an IP address
-     */
-    private String ipAddressType;
-
+  /** The type of an IP address */
+  private String ipAddressType;
 }
