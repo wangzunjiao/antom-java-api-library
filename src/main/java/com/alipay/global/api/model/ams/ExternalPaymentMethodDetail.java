@@ -11,9 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ExternalPaymentMethodDetail {
 
-    private String assetToken;
-    private String accountDisplayName;
-    private String disableReason;
-    private String paymentMethodDetailMetadata;
-
+  private String assetToken;
+  private String accountDisplayName;
+  private String disableReason;
+  private String paymentMethodDetailMetadata;
 }
