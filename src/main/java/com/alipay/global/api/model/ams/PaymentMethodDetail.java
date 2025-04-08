@@ -11,13 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PaymentMethodDetail {
 
-    private PaymentMethodDetailType paymentMethodDetailType;
-    private CardPaymentMethodDetail card;
-    private ExternalPaymentMethodDetail externalAccount;
-    private DiscountPaymentMethodDetail discount;
-    private CouponPaymentMethodDetail coupon;
+  private PaymentMethodDetailType paymentMethodDetailType;
+  private CardPaymentMethodDetail card;
+  private ExternalPaymentMethodDetail externalAccount;
+  private DiscountPaymentMethodDetail discount;
+  private CouponPaymentMethodDetail coupon;
 
-    private String paymentMethodType;
-    private String extendInfo;
-
+  private String paymentMethodType;
+  private String extendInfo;
 }

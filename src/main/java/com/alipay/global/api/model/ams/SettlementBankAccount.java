@@ -11,17 +11,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SettlementBankAccount {
 
-    private String bankAccountNo;
-    private String accountHolderName;
-    private String swiftCode;
-    private String bankRegion;
-    private AccountHolderType accountHolderType;
-    private String routingNumber;
-    private String branchCode;
-    private String accountHolderTIN;
-    private AccountType accountType;
-    private String bankName;
-    private Address accountHolderAddress;
-    private String iban;
-
+  private String bankAccountNo;
+  private String accountHolderName;
+  private String swiftCode;
+  private String bankRegion;
+  private AccountHolderType accountHolderType;
+  private String routingNumber;
+  private String branchCode;
+  private String accountHolderTIN;
+  private AccountType accountType;
+  private String bankName;
+  private Address accountHolderAddress;
+  private String iban;
 }

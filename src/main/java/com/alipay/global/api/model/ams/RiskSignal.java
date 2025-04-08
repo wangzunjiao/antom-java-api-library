@@ -10,14 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RiskSignal {
-    /**
-     * The tag assigned by a merchant to a risky transaction.
-     */
-    private String riskCode;
+  /** The tag assigned by a merchant to a risky transaction. */
+  private String riskCode;
 
-    /**
-     * The reason why a transaction is identified as risky provided by a merchant.
-     */
-    private String riskReason;
-
+  /** The reason why a transaction is identified as risky provided by a merchant. */
+  private String riskReason;
 }
