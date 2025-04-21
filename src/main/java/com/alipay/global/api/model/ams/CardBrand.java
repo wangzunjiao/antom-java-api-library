@@ -2,64 +2,39 @@ package com.alipay.global.api.model.ams;
 
 public enum CardBrand {
 
-    /**
-     * 维萨卡
-     */
-    VISA,
+  /** 维萨卡 */
+  VISA,
 
-    /**
-     * 万事达卡
-     */
-    MASTERCARD,
+  /** 万事达卡 */
+  MASTERCARD,
 
-    /**
-     * 万事达借记卡
-     */
-    MAESTRO,
+  /** 万事达借记卡 */
+  MAESTRO,
 
-    /**
-     * AMEX
-     */
-    AMEX,
+  /** AMEX */
+  AMEX,
 
-    /**
-     * JCB
-     */
-    JCB,
+  /** JCB */
+  JCB,
 
-    /**
-     * DINERS
-     */
-    DINERS,
+  /** DINERS */
+  DINERS,
 
-    /**
-     * DISCOVER
-     */
-    DISCOVER,
+  /** DISCOVER */
+  DISCOVER,
 
-    /**
-     * 银联
-     */
-    CUP,
+  /** 银联 */
+  CUP,
 
-    /**
-     * MIR
-     */
-    MIR,
+  /** MIR */
+  MIR,
 
-    /**
-     * ELO
-     */
-    ELO,
+  /** ELO */
+  ELO,
 
-    /**
-     * HIPERCARD
-     */
-    HIPERCARD,
+  /** HIPERCARD */
+  HIPERCARD,
 
-    /**
-     * TROY
-     */
-    TROY;
-
+  /** TROY */
+  TROY;
 }
