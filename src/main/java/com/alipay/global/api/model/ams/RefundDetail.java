@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RefundDetail {
 
-    private Amount refundAmount;
-    private RefundFromType refundFrom;
-
+  private Amount refundAmount;
+  private RefundFromType refundFrom;
 }

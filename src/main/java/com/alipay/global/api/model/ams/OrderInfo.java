@@ -11,6 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OrderInfo {
 
-    private Amount orderAmount;
-
+  private Amount orderAmount;
 }
