@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountBalance {
-    private String accountNo;
-    private String currency;
-    private Amount availableBalance;
-    private Amount frozenBalance;
-    private Amount totalBalance;
+  private String accountNo;
+  private String currency;
+  private Amount availableBalance;
+  private Amount frozenBalance;
+  private Amount totalBalance;
 }

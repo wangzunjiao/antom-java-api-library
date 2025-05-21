@@ -5,8 +5,4 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class VaultingCard extends CardPaymentMethodDetail {
-
-
-
-}
+public class VaultingCard extends CardPaymentMethodDetail {}
