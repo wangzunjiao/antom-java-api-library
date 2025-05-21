@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentMethodTypeItem {
-    private String paymentMethodType;
-    private int paymentMethodOrder;
-    private boolean expressCheckout;
+  private String paymentMethodType;
+  private int paymentMethodOrder;
+  private boolean expressCheckout;
 }
