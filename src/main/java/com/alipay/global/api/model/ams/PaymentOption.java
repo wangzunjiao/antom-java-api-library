@@ -1,5 +1,6 @@
 package com.alipay.global.api.model.ams;
 
+import com.alipay.global.api.model.aps.Logo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,5 +30,8 @@ public class PaymentOption {
 
     private Installment installment;
     private List<PromotionInfo> promotionInfos;
+
+    private InteractionType interactionType;
+    private String bankIdentifierCode;
 
 }

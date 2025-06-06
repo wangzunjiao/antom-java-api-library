@@ -12,4 +12,7 @@ import lombok.NoArgsConstructor;
 public class Contact {
     private ContactType type;
     private String info;
+    private String home;
+    private String work;
+    private String mobile;
 }
