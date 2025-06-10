@@ -10,11 +10,10 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class AlipayCustomsDeclareResponse extends AlipayResponse {
 
-    private String customsPaymentId;
-    private String customsOrderId;
-    private IdentityCheckResult identityCheckResult;
-    private ClearingChannel clearingChannel;
-    private String clearingTransactionId;
-    private String customsProviderRegistrationId;
-
+  private String customsPaymentId;
+  private String customsOrderId;
+  private IdentityCheckResult identityCheckResult;
+  private ClearingChannel clearingChannel;
+  private String clearingTransactionId;
+  private String customsProviderRegistrationId;
 }
