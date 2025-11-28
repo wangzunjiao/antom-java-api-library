@@ -21,7 +21,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '6'
+          java-version: '11'
           distribution: 'adopt'
       - name: Cache Maven packages
         uses: actions/cache@v3
