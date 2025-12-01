@@ -106,7 +106,6 @@ jobs:
             README.md
           commit_options: '--no-verify'
       - name: 6. Create and Push Version Tag 🌟 (新增步骤)
-        if: steps.commit_push.outputs.changes_detected == 'true'
         run: |
           # 约定 Tag 格式为 vX.Y.Z
           TAG_NAME="v${{ env.NEW_VERSION }}"
