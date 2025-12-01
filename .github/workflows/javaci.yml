@@ -63,7 +63,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-
       - name: 3. Update POM and Extract New Version
           # 修改后的 run 脚本：计算新版本 X.Y.Z+1
         run: |
