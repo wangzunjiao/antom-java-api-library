@@ -1,40 +1,64 @@
-#name: Release
-#
-#on:
-#  workflow_dispatch:
-#    inputs:
-#      pre-release:
-#        required: false
-#        type: boolean
-#        default: false
-#        description: "This release will be labeled as non-production ready"
-#      github-release:
-#        required: false
-#        type: boolean
-#        default: false
-#        description: "Publish Github release for the current version"
-#  # Monitor pull request events
-#  pull_request:
-#    types:
-#      - closed
-#    branches:
-#      - main
-#
-#jobs:
-#  release:
-#    permissions:
-#      contents: write
-#      pull-requests: write
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v4
-#      - name: Prepare the next main release
-#        uses: Adyen/release-automation-action@v1.3.1
-#        with:
-#          token: ${{ secrets.ADYEN_AUTOMATION_BOT_ACCESS_TOKEN }}
-#          develop-branch: main
-#          version-files: pom.xml src/main/java/com/adyen/Client.java README.md
-#          release-title: Adyen Java API Library
-#          pre-release: ${{ inputs.pre-release || false }}
-#          github-release: ${{ inputs.github-release || false }}
-#          separator: .pre.beta
+name: 2. Auto Version Update
+
+on:
+  workflow_run:
+    workflows: ["Java CI"] # 匹配上一个文件的 name
+    types:
+      - completed # 仅在上一个工作流完成时触发
+
+jobs:
+  version-bump:
+    name: Auto Bump Version and Commit
+    runs-on: ubuntu-latest
+
+    # 核心判断逻辑：
+    # 1. 确保触发的工作流 (CI / Testing) 是 'success'
+    # 2. 确保代码是推送到 'master' 分支的 (排除了 PR 合并到 master 前的测试)
+    if: |
+      github.event.workflow_run.conclusion == 'success' && 
+      github.event.workflow_run.head_branch == 'master'
+
+    steps:
+      # ⚠️ 注意：使用 workflow_run 时，默认 checkout 的是错误的 commit。
+      # 必须手动指定要 checkout 的 SHA (即触发 workflow_run 的那个 commit)
+      - name: 1. Checkout repository with correct SHA
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 2. Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
+      # 3. 更新 POM 和提取版本 (步骤与之前相同)
+      - name: 3. Update POM and Extract New Version
+        # ... (步骤内容与合并文件中的步骤相同)
+        run: |
+          echo "--- Updating pom.xml to next SNAPSHOT ---"
+          # ... (省略具体命令，与上一个回答中提供的一致)
+          mvn versions:set -DnextSnapshot=true -B
+          mvn versions:commit -B
+          NEW_VERSION=$(grep -m 1 '<version>' pom.xml | awk -F'[<>]' '/version/{print $3}')
+          echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
+          echo "New Version: ${NEW_VERSION} has been extracted."
+
+      # 4. 更新 README 文件 (步骤与之前相同)
+      - name: 4. Update Version in README File
+        # ... (步骤内容与合并文件中的步骤相同)
+        run: |
+          echo "--- Updating README file ---"
+          README_FILE="README.md"
+          sed -i 's#<version>[0-9A-Za-z.]*</version>#<version>${{ env.NEW_VERSION }}</version>#g' $README_FILE
+          echo "Successfully updated version in $README_FILE."
+
+      - name: 5. Commit and Push the updated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(release): Bump version to ${{ env.NEW_VERSION }}"
+          files: |
+            pom.xml
+            README.md
+          commit_options: '--no-verify'
