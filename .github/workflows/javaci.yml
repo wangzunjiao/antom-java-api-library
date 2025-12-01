@@ -65,14 +65,27 @@ jobs:
           distribution: 'adopt'
 
       - name: 3. Update POM and Extract New Version
-        # ... (步骤内容与上一个回复中提供的一致)
+          # 修改后的 run 脚本：计算新版本 X.Y.Z+1
         run: |
-          echo "--- Updating pom.xml to next SNAPSHOT ---"
-          mvn versions:set -DnextSnapshot=true -B
-          mvn versions:commit -B
-          NEW_VERSION=$(grep -m 1 '<version>' pom.xml | awk -F'[<>]' '/version/{print $3}')
-          echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
-          echo "New Version: ${NEW_VERSION} has been extracted."
+            echo "--- Updating pom.xml to next release version ---"
+            # 1. 提取当前版本号 (假设当前是 2.1.1)
+            CURRENT_VERSION=$(grep -m 1 '<version>' pom.xml | awk -F'[<>]' '/version/{print $3}')
+          echo "Current Version: ${CURRENT_VERSION}"
+  
+            # 2. 分割版本号并递增 Z (最后一个数字)
+            MAJOR_MINOR=$(echo ${CURRENT_VERSION} | awk -F'.' '{print $1"."$2}')
+            PATCH=$(echo ${CURRENT_VERSION} | awk -F'.' '{print $3}')
+            NEXT_PATCH=$((PATCH + 1))
+            NEW_VERSION="${MAJOR_MINOR}.${NEXT_PATCH}"
+          echo "Calculated New Version: ${NEW_VERSION}"
+  
+            # 3. 使用新的版本号更新 pom.xml (注意这里不再使用 -DnextSnapshot=true)
+            mvn versions:set -DnewVersion=${NEW_VERSION} -B
+            mvn versions:commit -B
+           
+            # 4. 设置环境变量
+            echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
+          echo "New Version: ${NEW_VERSION} has been set."
 
       - name: 4. Update Version in README File
         # ... (步骤内容与上一个回复中提供的一致)
@@ -85,7 +98,7 @@ jobs:
       - name: 5. Commit and Push the updated files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(release): Bump version to ${{ env.NEW_VERSION }}"
+          commit_message: "chore(release): Bump version to ${{ env.NEW_VERSION }} [skip ci]"
           files: |
             pom.xml
             README.md # 确认文件名
