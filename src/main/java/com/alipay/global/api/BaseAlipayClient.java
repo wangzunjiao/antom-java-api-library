@@ -28,6 +28,10 @@ public abstract class BaseAlipayClient implements AlipayClient {
   /** is sandbox mode */
   private boolean isSandboxMode = false;
 
+
+
+
+
   public BaseAlipayClient() {}
 
   public BaseAlipayClient(String gatewayUrl, String merchantPrivateKey, String alipayPublicKey) {
