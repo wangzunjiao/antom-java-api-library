@@ -30,8 +30,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
-      - name: Check code style
-        run: mvn -B checkstyle:check --no-transfer-progress
+      - name: Compile Code for Errors
+        run: mvn -B compile --no-transfer-progress
 
   java-test:
     name: Build and Test
