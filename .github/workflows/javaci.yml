@@ -105,3 +105,20 @@ jobs:
             pom.xml
             README.md
           commit_options: '--no-verify'
+      - name: 6. Create and Push Version Tag 🌟 (新增步骤)
+        if: steps.commit_push.outputs.changes_detected == 'true'
+        run: |
+          # 约定 Tag 格式为 vX.Y.Z
+          TAG_NAME="v${{ env.NEW_VERSION }}"
+          
+          echo "Creating Tag: $TAG_NAME"
+          # 1. 创建本地 Tag，指向最新的 commit
+          git tag -a $TAG_NAME -m "Release version ${{ env.NEW_VERSION }}"
+          
+          # 2. 推送 Tag
+          # 由于 Step 1 已经配置了认证，可以直接推送
+          git push origin $TAG_NAME
+
+        env:
+          # 确保 Git 操作使用正确的认证信息
+          GITHUB_TOKEN: ${{ secrets.ADYEN_AUTOMATION_BOT_ACCESS_TOKEN }}
