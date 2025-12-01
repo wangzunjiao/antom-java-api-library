@@ -86,12 +86,15 @@ jobs:
           echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
           echo "New Version: ${NEW_VERSION} has been set."
 
-      - name: 4. Update Version in README File
-        # ... (步骤内容与上一个回复中提供的一致)
+      - name: 4. Update Version in README File (Regex adjusted)
         run: |
           echo "--- Updating README file ---"
-          README_FILE="README.md" # 确认文件名
-          sed -i 's#<version>[0-9A-Za-z.]*</version>#<version>${{ env.NEW_VERSION }}</version>#g' $README_FILE
+          README_FILE="README.md"
+          NEW_VERSION_SHELL="${{ env.NEW_VERSION }}"
+          
+          # 匹配 <version> 和 </version> 之间可能存在的任何非换行字符
+          sed -i "s#<version>.*</version>#<version>$NEW_VERSION_SHELL</version>#g" $README_FILE
+          
           echo "Successfully updated version in $README_FILE."
 
       - name: 5. Commit and Push the updated files
@@ -100,5 +103,5 @@ jobs:
           commit_message: "chore(release): Bump version to ${{ env.NEW_VERSION }} [skip ci]"
           files: |
             pom.xml
-            README.md # 确认文件名
+            README.md
           commit_options: '--no-verify'
