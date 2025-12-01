@@ -1,0 +1,82 @@
+name: 📦 Maven Publish to Central
+
+on:
+  # 仅在创建新的 Tag 时触发发布（例如：v1.0.0）
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+  # 允许手动从 Actions 页面触发
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish Release
+    runs-on: ubuntu-latest
+
+    # 确保只有在 Tag 上运行
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: 1. Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 2. Set up JDK 17 and Maven Settings
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          # --- Maven Central 认证配置 ---
+          # 告诉 setup-java 注入这些凭证到 settings.xml
+          server-id: ossrh
+          server-username: ${{ secrets.OSSRH_USERNAME }}
+          server-password: ${{ secrets.OSSRH_PASSWORD }}
+
+          # --- GPG 签名配置 ---
+          # 导入用于签名的 GPG 私钥
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          # 设置 GPG 密码
+          gpg-passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+
+          # 配置 settings.xml 路径 (默认在 runner 上的 .m2 目录下)
+          settings-path: ${{ github.workspace }}
+
+      - name: 3. Set Release Version from Tag
+        id: set_version
+        run: |
+          # 提取 Tag 名作为版本号 (例如：refs/tags/v1.2.3 -> 1.2.3)
+          RELEASE_VERSION=${GITHUB_REF##*/}
+          # 移除前缀 'v'
+          VERSION=${RELEASE_VERSION#v}
+          echo "::set-output name=version::$VERSION"
+          echo "Extracted release version: $VERSION"
+
+      # 可选：如果您的 pom.xml 中的版本号是 SNAPSHOT，您可能需要先更新版本
+      - name: 4. Update POM Version (If needed)
+        run: |
+          # 这一步将项目版本设置为 Tag 版本，避免 SNAPSHOT 版本发布
+          mvn versions:set -DnewVersion=${{ steps.set_version.outputs.version }} -B
+          mvn versions:commit -B
+
+      - name: 5. Build, Sign, and Deploy to Maven Central
+        run: |
+          echo "Starting deployment of version ${{ steps.set_version.outputs.version }}"
+          # -B: 批处理模式
+          # -P release: 激活 pom.xml 中配置的 release profile (通常包含 GPG 签名配置)
+          # deploy: 执行部署
+          # settings-file: 使用 setup-java 生成的包含认证信息的 settings.xml
+          mvn clean deploy -B -P release \
+            --settings ${{ github.workspace }}/settings.xml
+        env:
+          # 显式传递 GPG 密码，确保 GPG 签名成功
+          GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+
+      - name: 6. Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ steps.set_version.outputs.version }}
+          draft: false
+          prerelease: false
