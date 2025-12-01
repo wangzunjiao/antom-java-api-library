@@ -107,6 +107,9 @@ jobs:
           commit_options: '--no-verify'
       - name: 6. Create and Push Version Tag 🌟 (新增步骤)
         run: |
+          # --- 关键：配置 Git 用户身份 ---
+          git config user.email "wangzunjiao.wzj@digital-engine.com"
+          git config user.name "wangzunjiao-actions[bot]"
           # 约定 Tag 格式为 vX.Y.Z
           TAG_NAME="v${{ env.NEW_VERSION }}"
           
